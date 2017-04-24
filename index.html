@@ -1,546 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no,email=no">
-    <link rel="stylesheet" href="css/base.css">
-    <title>Title</title>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>xiaokui</title>
+    <link rel="stylesheet" href="./static/css/bootstrap.min.css">
     <style>
-        .header-contain{
-            margin:0 auto;
-            min-width:1120px;
-            height:100px;
-            overflow:hidden;
-            color: #494949;
-        }
-        .header-contain a.logo{
-            float:left;
-            width: 260px;
-            height:100px;
-            background:url('img/logo1.png') no-repeat;
-            background-size:contain;
-            margin-top:19px;
-        }
-        .header-contain .logo h1{
-           text-indent:-9999rem;
-        }
-        .nav-wrap{
-            float:right;
-            margin-top:49px;
-        }
-        .nav-wrap ul{
-            overflow: hidden;
-        }
-        .nav-wrap ul li{
-            float:left;
-            list-style:none;
-            margin-right:40px;
-        }
-        .nav-wrap a{
-            text-decoration:none;
-            color:#000;
-            font-size: 18px;
-        }
-        .banner-container{
-            min-width: 1120px;
-            position: relative;
-            overflow: hidden;
-            height:440px;
-        }
-        .banner {
-             width: 500%;
+      .content li{
+        white-space:nowrap;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        border:none;
+        padding-bottom:0;
 
-        }
-        .banner-row{
-            width: 100%;
-        }
-        .banner li{
-            float:left;
-            width: 1355px;
-        }
-        .banner img{
-            width: 100%;
-        }
-        .banner-page{
-            position:absolute;
-            left:0;
-            bottom:40px;
-            padding-top:20px;
-            text-align: center;
-            width: 100%;
-        }
-        .banner-page a{
-            display:inline-block;
-            width: 12px;
-            height:12px;
-            border-radius:50%;
-            background:#fff;
-            border:1px solid #fff;
-            margin:0 5px;
-        }
-        #content{
-            min-width: 1120px;
-             background: #fafafa;
-        }
-        .cont-container{
-            width: 1180px;
-            margin: 0 auto;
-            position: relative;
-
-        }
-        .service{
-            border-bottom:1px solid #ccc;
-            height: 76px;
-            margin: auto auto 34px;
-        }
-        .service h2 {
-            position: absolute;
-            left: 50%;
-            margin-top: 64px;
-            margin-left: -78px;
-            width: 156px;
-            height:44px;
-            background:#fafafa url(img/sprite-tit.png) no-repeat;
-            background-position: 0 -486px;
-        }
-        .child-container{
-            padding: 54px 0 84px;
-        }
-        .describe {
-            color: #666;
-            text-align: center;
-            font-size: 14px;
-            margin-bottom: 54px;
-        }
-        .our-server li{
-            float:left;
-            width: 320px;
-            height:510px;
-            border:1px solid #000;
-            background-color: #fff;
-            margin-left: 48px;
-            position: relative;
-        }
-        .icons{
-            position: absolute;
-            top: 42px;
-            margin-left: 40px;
-            width: 238px;
-            height: 130px;
-            background: url(img/our-service.png) no-repeat;
-        }
-        .our-server h4{
-            position: absolute;
-            top: 218px;
-            width: 100%;
-            color: #333;
-            text-align: center;
-            font-size: 24px;
-        }
-        .our-server strong{
-            position: absolute;
-            top: 262px;
-            padding-left: 40px;
-            width: 240px;
-            color: #666;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 24px;
-        }
-        .btn{
-            position: absolute;
-            top: 410px;
-            left:84px;
-            width:150px ;
-            height: 38px;
-            border: 1px solid #ff9412;
-            border-radius: 2px;
-            color: #ff9412;
-            text-align: center;
-            font-size: 14px;
-            line-height: 34px;
-            background: #fff;
-            font-family: "microsoft yahei";
-        }
-        .icon-wyxx {
-            top: 34px;
-            margin-left: 51px;
-            width: 217px;
-            height: 148px;
-            background-position: 0 -130px;
-        }
-        .icon-mthz {
-            margin-left: 34px;
-            width: 253px;
-            height: 130px;
-            background-position: 0 -278px;
-        }
-        .container {
-            padding: 54px 0 84px;
-        }
-        #question ul {
-            margin-left: 50px;
-        }
-        #question li{
-            padding-top: 40px;
-            float:left;
-            margin-left:15px;
-            width: 338px;
-            height: 158px;
-            border: 1px #ddd solid;
-            border-radius: 4px;
-            margin-bottom: 20px;
-        }
-        #question p{
-            width: 58px;
-            height: 58px;
-            border-radius: 4px;
-            border: 1px #ddd solid;
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-        #question p span{
-            background: url(img/question-sprite.png) no-repeat;
-            height: 50px;
-            width: 50px;
-            display: inline-block;
-        }
-        #question ul li:nth-child(1) p span{
-            background-position: 7px -42px;
-        }
-        #question ul li:nth-child(2) p span{
-            background-position: -42px -38px;
-        }
-        #question ul li:nth-child(3) p span{
-            background-position: -90px -38px;
-        }
-        #question ul li:nth-child(4) p span{
-            background-position: -142px -42px;
-        }
-        #question ul li:nth-child(5) p span{
-            background-position: -192px -38px;
-        }
-         #question ul li:nth-child(6) p span{
-            background-position: -242px -38px;
-        }
-        #question .content{
-            width: 225px;
-            height: 90px;
-            overflow: hidden;
-        }
-        .content h3{
-            font-size: 15px;
-            color: #555;
-        }
-        .content span{
-            display:block;
-            font-size: 12px;
-            color: #666;
-            line-height: 24px;
-        }
-        .bx-wrapper{
-            position:relative;
-            max-width: 1052px;
-            margin: 0px auto;
-        }
-        .bx-viewport{
-            overflow:hidden;
-        }
-        .bx-viewport li a {
-            display: block;
-            overflow: hidden;
-            width: 324px;
-        }
-        .bx-viewport li h4 {
-            background-color: rgba(0,0,0,.3);
-            color: #fff;
-            font-size: 14px;
-            font-weight: 500;
-            height: 46px;
-            line-height: 46px;
-            width: 324px;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            text-align:center;
-        }
-        .bx-viewport ol{
-            margin-top: -15px;
-            padding-left: 16px;
-            overflow: hidden;
-            background: #fafafa;
-        }
-        .bx-viewport li span {
-            background-color: rgba(0,0,0,.2);
-            display: none;
-            height: 210px;
-            width: 324px;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-        .bx-viewport li span i {
-            background: url(img/ser.png) no-repeat;
-            height: 72px;
-            width: 72px;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            margin: -28px 0 0 -36px;
-        }
-       
-        .bx-wrapper .bx-control a{
-            height: 60px;
-            margin-top: -38px;
-            position: absolute;
-            text-indent: -9999px;
-            top: 50%;
-            width: 60px;
-            z-index: 9999;
-        }
-         .bx-control .bx-prev {
-            background: url(img/controls.png) no-repeat;
-            left: -80px;
-        }
-        .bx-control .bx-next {
-            background: url(img/controls.png) no-repeat;
-            right: -80px;
-        }
-        .show-case {
-            text-align: center;
-            overflow: hidden;
-            width: 1105px;
-            overflow: hidden;
-            margin: 0 auto;
-        }
-        .show-case li {
-            width: 221px;
-            height: 80px;
-            border-top: 1px dashed #ccc;
-            border-left: 1px dashed #ccc;
-            text-align: center;
-            overflow: hidden;
-        }
-        .show-case li a {
-            width: 160px;
-            height: 60px;
-            display: block;
-            margin: 10px auto;
-        }
+      }
+      .panel-body li{
+        background: #f5f5f5;
+      }
+      .progress{
+        margin-bottom:0;
+        background: #ccc;
+      }
+      .container .panel{
+        background: #f5f5f5;
+        border:none;
+        margin-bottom: 30px;
+        padding-bottom:5px;
+      }
+      .panel-heading,.panel-footer{
+        border:none;
+      }
+      .panel-footer{
+        padding:0 32px 12px;
+      }
+      .panel-footer .jC span{
+        margin-top: 5px;
+      }
+      .cap{
+        border-top:1px solid #ccc;
+      }
+      .cap span{
+        left: 50%;
+        margin-left: -7px;
+      }
+      .section{
+        margin:10px 10px 5px;
+        background: #fff;
+        border-radius:5px;
+        box-shadow:0px 0px 5px #000;
+      }
+      .section h4{
+        padding-top: 20px;
+      }
+      .section .jC{
+        padding:0 32px;
+      }
+      .clearfix{
+        padding-left:32px;
+      }
+      .section .row span{
+        margin-top:5px;
+      }
+      .progress-bar-black{
+        background: #000;
+      }
     </style>
-</head>
-<body>
-    <header>
-        <div class="header-contain">
-            <a href="#" class="logo"><h1>海云(SHOPCMD.COM)云道</h1></a>
-            <div class="nav-wrap">
-                <ul>
-                    <li><a href="#">首页</a></li>
-                    <li><a href="#">云道商城</a></li>
-                    <li><a href="#">智慧门店</a></li>
-                    <li><a href="#">营销平台</a></li>
-                    <li><a href="#">媒体联盟</a></li>
-                    <li><a href="#">关于云道</a></li>
-                    <li><a href="#">用户中心</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
-    <section>
-        <div class="banner-container">
-           <div class="banner-row">
-                 <ul class="banner clearfix">
-                    <li><a href="#"><img src="img/banner-0.png.gif" alt=""></a></li>
-                    <li><a href="#"><img src="img/banner-1.png" alt=""></a></li>
-                    <li><a href="#"><img src="img/banner-2.png" alt=""></a></li>
-                    <li><a href="#"><img src="img/banner-3.gif" alt=""></a></li>
-                    <li><a href="#"><img src="img/banner-4.gif" alt=""></a></li>
-                </ul>
-           </div>
-            <div class="banner-page">
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-            </div>
-        </div>
-    </section>
-    <section id="content">
-        <div class="cont-container">
-            <div class="global-gray">
-                <div class="service"><h2></h2></div>
-                <div class="child-container">
-                    <div class="describe">
-                        <p>shopcmd云道，国内领先的独立电商解决方案及全渠道营销平台。完整的产品体系，简约的系统，个性化前端，全覆盖多渠道营销体系...</p>
-                        <p>我们致力于打造一个服务于品牌商城/独立电商的完整生态，让企业的独立电商之路变得更简单，也更有价值！
-                        </p>
-                    </div>
-                    <ol class="our-server clearfix">
-                        <li><a href="#">
-                            <div class="icons"></div>
-                            <h4>我是卖家</h4>
-                            <strong>shopcmd云电商解决方案，我们不仅仅是领先的独立商城建站系统。我们从互联网时代品牌建设和品牌营销的全新视角，赋予了品牌商城及独立电商更大的生存空间和存在价值！</strong>
-                            <button class="btn">我要建站</button>
-                        </a></li>
-                        <li><a href="#">
-                            <div class="icons icon-wyxx"></div>
-                            <h4>我要营销</h4>
-                            <strong>云道不断完善的营销系统，联合优质媒体资源，集成常用的网络营销模式及终端，以最简单的产品形态，帮助独立商城实现店铺及商品信息在全网的快速分销。</strong>
-                            <button class="btn">我要推广</button>
-                        </a></li>
-                        <li><a href="#">
-                            <div class="icons icon-mthz"></div>
-                            <h4>媒体合作</h4>
-                            <strong>真正的全民营销时代，无需学习，无需维护，通过您的网站、朋友圈、媒体流量、移动展现、媒体解决方案获取收益。我们致力于实现合作媒体流量价值的最大化。</strong>
-                            <button class="btn">我要合作</button>
-                        </a></li>
-                    </ol>
-                </div>
-            </div>
-            <div class="aside-wrap">
-                <div class="service"><h2></h2></div>
-                <div id="question" class="container">
-                    <ul class="clearfix">
-                        <li>
-                            <p class="fl"><span></span></p>
-                            <div class="content fl">
-                                <h3>开始使用</h3>
-                                <span>人人店的使用流程，怎么找到适合自己的</span>
-                                <span>人人店包含的内容</span>
-                                <span>人人店的宗旨</span>
-                            </div>
-                        </li>
-                        <li>
-                            <p class="fl"><span></span></p>
-                            <div class="content fl">
-                                <h3>开始使用</h3>
-                                <span>人人店的使用流程，怎么找到适合自己的</span>
-                                <span>人人店包含的内容</span>
-                                <span>人人店的宗旨</span>
-                            </div>
-                        </li>
-                        <li>
-                            <p class="fl"><span></span></p>
-                            <div class="content fl">
-                                <h3>开始使用</h3>
-                                <span>人人店的使用流程，怎么找到适合自己的</span>
-                                <span>人人店包含的内容</span>
-                                <span>人人店的宗旨</span>
-                            </div>
-                        </li>
-                        <li>
-                            <p class="fl"><span></span></p>
-                            <div class="content fl">
-                                <h3>开始使用</h3>
-                                <span>人人店的使用流程，怎么找到适合自己的</span>
-                                <span>人人店包含的内容</span>
-                                <span>人人店的宗旨</span>
-                            </div>
-                        </li>
-                        <li>
-                            <p class="fl"><span></span></p>
-                            <div class="content fl">
-                                <h3>开始使用</h3>
-                                <span>人人店的使用流程，怎么找到适合自己的</span>
-                                <span>人人店包含的内容</span>
-                                <span>人人店的宗旨</span>
-                            </div>
-                        </li>
-                        <li>
-                            <p class="fl"><span></span></p>
-                            <div class="content fl">
-                                <h3>开始使用</h3>
-                                <span>人人店的使用流程，怎么找到适合自己的</span>
-                                <span>人人店包含的内容</span>
-                                <span>人人店的宗旨</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="aside-wrap">
-                <div class="service"><h2></h2></div>
-                <div id="result" class="container">
-                    <div class="bx-wrapper">
-                        <div class="bx-viewport">
-                            <ol class="clearfix" style="width: 1215%;position: relative;transition-duration: 0s;transform: translate3d(-16px, 0px, 0px);">
-                                <li style="float: left;list-style: outside none none;position: relative;width: 324px;margin-right: 40px;"><a href="#">
-                                    <img src="img/1.png" alt="">
-                                    <h4>vero活动图3</h4>
-                                    <span style="display:none;">
-                                    <i></i></span>
-                                    </a>   
-                                </li>
-                                <li style="float: left;list-style: outside none none;position: relative;width: 324px;margin-right: 40px;"><a href="#">
-                                    <img src="img/2.png" alt="">
-                                    <h4>vero活动图3</h4>
-                                    <span style="display:none;">
-                                    <i></i></span>
-                                    </a>   
-                                </li>
-                                <li style="float: left;list-style: outside none none;position: relative;width: 324px;margin-right: 40px;"><a href="#">
-                                    <img src="img/3.png" alt="">
-                                    <h4>vero活动图3</h4>
-                                    <span style="display:none;">
-                                    <i></i></span>
-                                    </a>   
-                                </li>
-                                <li style="float: left;list-style: outside none none;position: relative;width: 324px;margin-right: 40px;"><a href="#">
-                                    <img src="img/4.png" alt="">
-                                    <h4>vero活动图3</h4>
-                                    <span style="display:none;">
-                                    <i></i></span>
-                                    </a>   
-                                </li>
-                                <li style="float: left;list-style: outside none none;position: relative;width: 324px;margin-right: 40px;"><a href="#">
-                                    <img src="img/5.png" alt="">
-                                    <h4>vero活动图3</h4>
-                                    <span style="display:none;">
-                                    <i></i></span>
-                                    </a>   
-                                </li>
-                                <li style="float: left;list-style: outside none none;position: relative;width: 324px;margin-right: 40px;"><a href="#">
-                                    <img src="img/6.png" alt="">
-                                    <h4>vero活动图3</h4>
-                                    <span style="display:none;">
-                                    <i></i></span>
-                                    </a>   
-                                </li>
-                                <li style="float: left;list-style: outside none none;position: relative;width: 324px;margin-right: 40px;"><a href="#">
-                                    <img src="img/7.png" alt="">
-                                    <h4>vero活动图3</h4>
-                                    <span style="display:none;">
-                                    <i></i></span>
-                                    </a>   
-                                </li>
-                            </ol>
-                        </div>
-                        <div class="bx-control">
-                            <a href="" class="bx-prev" style="background-position: 0px -60px;">Prev</a>
-                            <a href="" class="bx-next" style="background-position: 0px -180px;">next</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="aside-wrap">
-                <div class="child-container">
-                    <div class="show-case">
-                        <ol class="clearfix">
-                            <li class="fl"><a href="#"><img src="img/c1.png" alt=""></a></li>
-                             <li class="fl"><a href="#"><img src="img/c2.png" alt=""></a></li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-</body>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
 </html>
